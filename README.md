@@ -102,6 +102,36 @@ helm upgrade --install k8s-connection gitlab/gitlab-agent \
 ![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/bc0ec904-2af5-4c53-9abe-acae62dd0d43)
 ![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/befea12d-c8dc-4454-aed1-4ca96e57e120)
 
+_______________________________________________________________________________________________________________________
+
+### Gitlab CI-CD pipeline
+- `Now create .gitlab-ci.yml in our repository. This file is indicate we ci/cd pipeline is there. Below code will create image and push to gotlab registry.`
+
+```
+stages:
+    - build
+build_image:
+  image: docker
+  stage: build
+  services:
+    - docker:dind
+  variables:
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
+
+```
+> Output
+
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/c827aa97-6f98-4301-bef2-100ed2a1ad6d)
+
+> check the built image in the registory by CI-CD pipeline
+
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/124443eb-fbd8-4972-ac0b-7b20b103538c)
+
+
 
 
 
