@@ -87,6 +87,33 @@ helm upgrade --install k8s-connection gitlab/gitlab-agent \
 
 ![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/9c6b05ba-0500-4560-acde-e50ce73cccf2)
 
+**Push reposiroty to gitlab** 
+
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/2ccc196d-120d-4003-9694-7b26b05062c7)
+
+**Build docker image to be pushed on gitlab reposiroty**
+
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/59a813ee-d363-42d9-820c-d668e9b57cdc)
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/f9b0c1f9-3e25-4cb9-9b06-b498455e528e)
+
+**Push docker image on gitlab registery manually**
+
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/1df2b7e3-7180-4f74-a7fd-434c1e1d9404)
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/bc0ec904-2af5-4c53-9abe-acae62dd0d43)
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/befea12d-c8dc-4454-aed1-4ca96e57e120)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
