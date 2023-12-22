@@ -20,7 +20,7 @@ Gitlab Eks Intigration
 ### Usefull Links 
 1. https://docs.gitlab.com/ee/user/clusters/agent/install/index.html
 2. https://github.com/mkaraminejad/cicd_pipeline/tree/main/1-K8S-CICD
-3. https://www.youtube.com/watch?v=fwtxi_BRmt0
+
 
 ### High level steps 
 - Create gitlab account in https://gitlab.com
