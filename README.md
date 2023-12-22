@@ -217,6 +217,8 @@ kubectl create secret docker-registry app-secret --docker-server=regitry.gitlab.
 
 
 
+
+
     
 
 
