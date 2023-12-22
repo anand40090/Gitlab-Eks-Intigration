@@ -73,6 +73,21 @@ helm upgrade --install k8s-connection gitlab/gitlab-agent \
     --set config.token=glagent-KcWsVoFxgEj57ziDykbLVX17i9Rtg8TYKB5LRKEtVrA__BG14Q \
     --set config.kasAddress=wss://kas.gitlab.com
 ```
+> Output
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/88843d92-6b70-487c-87d9-f966c0823d2a)
+
+> Now K8s cluster and gitlab Connection is created now
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/56e366d2-6959-42a8-92c7-c0d5c9a58108)
+
+- `Now upload project data in the REPO A 'K8s-data'on gitlab`
+**Clone repository in your system and dump you project data in the path and upload on gitlab**
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/71c5c0f1-2c62-455f-90ba-1ec6fb6817e0)
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/9c6b05ba-0500-4560-acde-e50ce73cccf2)
+
+
+
+
+
 
 
     
