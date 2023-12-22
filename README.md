@@ -153,7 +153,39 @@ admin1@Devop1:~/k8s-data$
 
 ![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/d7be54b3-3a83-4cc6-a63c-efcbfb6d5aca)
 
-- `Run below mentioned to create pods by ci -cd pipeline`
+- `Run below mentioned command to generate POd.yaml file`
+```
+kubectl run loggin-app --image=registry.gitlab.com/XXXXXX/k8s-data/sample:V1 --dry-run=client -o yaml > pod.yaml
+```
+> Output
+```
+admin1@Devop1:~/k8s-data$ cat pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: loggin-app
+  name: loggin-app
+spec:
+  containers:
+  - image: registry.gitlab.com/XXXX/k8s-data/sample:V1
+    name: loggin-app
+status: {}
+
+```
+
+- `Run below mentioned command to generate secret.yaml file`
+```
+kubectl create secret docker-registry app-secret --docker-server=regitry.gitlab.com --docker-username='XXXXX'--docker-password='XXXX' --dry-run=client -o yaml > secret.yaml
+```
+> Run kubectl apply -f scret-yaml to create secret
+
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/7a48e9fd-dcc4-4c4c-8c6e-4e7af60ae835)
+
+
+
+
+
 
 
 
