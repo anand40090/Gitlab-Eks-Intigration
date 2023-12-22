@@ -17,6 +17,11 @@ Gitlab Eks Intigration
 - Local or cloud githlab account
 - Eksctl, Kubectl, docker engine installed system
 
+### Usefull Links 
+1. https://docs.gitlab.com/ee/user/clusters/agent/install/index.html
+2. https://github.com/mkaraminejad/cicd_pipeline/tree/main/1-K8S-CICD
+3. https://www.youtube.com/watch?v=fwtxi_BRmt0
+
 ### High level steps 
 - Create gitlab account in https://gitlab.com
 - Create one project for k8s connection
@@ -39,8 +44,40 @@ Gitlab Eks Intigration
 
   ![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/f7addffa-1a31-4696-9f7c-b2f71cb18aa9)
 
-- `Connect working kubernetes cluster with gitlab`
-  > To ocnnect kubernetes cluster with gitlab, you first install agent in your cluster
+- **Connect working kubernetes cluster with gitlab**
+  
+1. To connect existing working kubernetes cluster with gitlab, you first install agent in your cluster
+   - In the repository, in the default branch, create an agent configuration file at the root
+   - For time being keep the yaml file balnk
+     ```
+     “.gitlab/agents/k8s-connections/config.yaml
+     ```
+
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/3ce6552a-c3a4-46ee-9c8a-bbfce980e4a6)
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/5adbf2e7-091e-4d23-8b74-fb9872ddd7b9)
+
+**You must register an agent before you can install the agent in your cluster. To register an agent -**
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/dc96f4cc-2bf7-449d-b1e5-a88874fa3e92)
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/2087de2d-c173-4d70-a647-b2f3a4a06449)
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/f37c3b5a-1759-414f-b9f4-d6b9ed0aa687)
+
+**Run below mentioned code on the Linus or windows system from where K8s cluster is accessible using Eks or Kubectl**
+**For this helm package manger to be installed on the system**
+```
+helm repo add gitlab https://charts.gitlab.io
+helm repo update
+helm upgrade --install k8s-connection gitlab/gitlab-agent \
+    --namespace gitlab-agent-k8s-connection \
+    --create-namespace \
+    --set image.tag=v16.8.0-rc3 \
+    --set config.token=glagent-KcWsVoFxgEj57ziDykbLVX17i9Rtg8TYKB5LRKEtVrA__BG14Q \
+    --set config.kasAddress=wss://kas.gitlab.com
+```
+
+
+    
+
+
 
 
 
