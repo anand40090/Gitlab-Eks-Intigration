@@ -30,7 +30,7 @@ Gitlab Eks Intigration
 - Create .gitlab-ci.yml in gitlab repository for deployment
 - setup gitlab to use Kubernetes cluster
 ****************************************************************************************************************************************
-# End to end lab 
+# End to end lab (Part-1)
 
 - `Login to the gitlab aacout on https://gitlab.com`
   
@@ -104,7 +104,7 @@ helm upgrade --install k8s-connection gitlab/gitlab-agent \
 
 _______________________________________________________________________________________________________________________
 
-### Gitlab CI-CD pipeline
+### Gitlab CI-CD pipeline (Part-2)
 - `Now create .gitlab-ci.yml in our repository. This file is indicate we ci/cd pipeline is there. Below code will create image and push to gotlab registry.`
 
 ```
@@ -130,6 +130,36 @@ build_image:
 > check the built image in the registory by CI-CD pipeline
 
 ![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/124443eb-fbd8-4972-ac0b-7b20b103538c)
+
+______________________________________________________________________________________________________________________________________
+
+### Use Gitlab registery image to Kubernetes cluster (Part-3)
+
+- `Run below mentioned command to create Kubernetes pod from the gitlab registery image manually`
+
+```
+admin1@Devop1:~/k8s-data$ kubectl run loggin-app --image=registry.gitlab.com/XXXXX/k8s-data/sample:V1
+pod/loggin-app created
+admin1@Devop1:~/k8s-data$ kubectl get po
+NAME         READY   STATUS              RESTARTS   AGE
+loggin-app   0/1     ContainerCreating   0          8s
+admin1@Devop1:~/k8s-data$ kubectl get po
+NAME         READY   STATUS    RESTARTS   AGE
+loggin-app   1/1     Running   0          17s
+admin1@Devop1:~/k8s-data$
+```
+
+> Output
+
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/d7be54b3-3a83-4cc6-a63c-efcbfb6d5aca)
+
+- `Run below mentioned to create pods by ci -cd pipeline`
+
+
+
+
+
+
 
 
 
