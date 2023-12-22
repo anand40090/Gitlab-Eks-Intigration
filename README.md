@@ -170,6 +170,8 @@ spec:
   containers:
   - image: registry.gitlab.com/XXXX/k8s-data/sample:V1
     name: loggin-app
+  imagePullSecrets:
+  - name: app-secret
 status: {}
 
 ```
@@ -180,7 +182,10 @@ kubectl create secret docker-registry app-secret --docker-server=regitry.gitlab.
 ```
 > Run kubectl apply -f scret-yaml to create secret
 
-![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/7a48e9fd-dcc4-4c4c-8c6e-4e7af60ae835)
+![image](https://github.com/anand40090/Gitlab-Eks-Intigration/assets/32446706/de79ce15-0534-4c7b-aa0a-11b20ccbdd45)
+
+
+
 
 
 
